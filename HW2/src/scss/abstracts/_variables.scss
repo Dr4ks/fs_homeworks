@@ -1,0 +1,21 @@
+/* ----VARIABLES---- */
+/* Font sizes */
+$fs-lg: 1.75rem; // 28px
+$fs-sm: 1.25rem; // 20px
+$fs-xs: 1.0625rem; // 17px
+
+/* Font weights */
+$fw-normal: 400;
+$fw-bold: 600;
+
+/* Breakpoints */
+$breakpoints: (
+  sm: 20rem,   //this is for first one
+  //320px
+  md: 48rem,     //this is for second one
+  // 768px
+  lg: 64rem,
+  // 1024px
+  xl: 75rem,   //thi  s is for third one
+  // 1280px
+);

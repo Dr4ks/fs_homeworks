@@ -1,0 +1,178 @@
+@mixin mobile {
+    @media (min-width: map-get($breakpoints, "sm")) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media (min-width: map-get($breakpoints, "md")) {
+      @content;
+    }
+  }
+  
+  @mixin laptop {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: map-get($breakpoints, "xl")) {
+      @content;
+    }
+  }
+
+  //Main Part is here
+@mixin pwhl($position,$width,$height,$left){   
+    position: $position;
+    width: $width;
+    height: $height;
+    left: $left;
+}
+@mixin bstbbbrd($box-sizing,$top,$background,$border,$border-radius){
+    box-sizing: $box-sizing;
+    top: $top;
+    background: $background;
+    border: $border;
+    border-radius:$border-radius;
+}
+@mixin tp($top,$background){
+    top:$top;
+    background:$background;
+}
+
+@mixin setsforfont($top,$font-family,$font-style,$font-weight,$font-size,$line-height,$color){
+  top: $top;
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+//Main Part is here
+  
+  @mixin flexbox($display: flex,
+    $direction: row,
+    $placeContent: null,
+    $placeItems: null,
+    $wrap: null,
+    $shrink: null,
+    $grow: null,
+    $alignContent: null,
+    $justifyContent: null,
+    $alignItems: null,
+    $justifyItems: null,
+    $text-align:null,
+    $text-transform:null) {
+    text-transform: $text-transform;
+    display: $display;
+    flex-direction: $direction;
+    text-align: $text-align;
+    @if $placeContent==null {
+      @if $alignContent {
+        align-content: $alignContent;
+      }
+  
+      @if $justifyContent {
+        justify-content: $justifyContent;
+      }
+    }
+  
+    @else {
+      place-content: $placeContent;
+    }
+  
+    @if $placeItems==null {
+      @if $alignItems {
+        align-items: $alignItems;
+      }
+  
+      @if $justifyItems {
+        justify-items: $justifyItems;
+      }
+    }
+  
+    @else {
+      place-items: $placeItems;
+    }
+  
+    @if $wrap {
+      flex-wrap: $wrap;
+    }
+  
+    @if $shrink {
+      flex-shrink: $shrink;
+    }
+  
+    @if $grow {
+      flex-grow: $grow;
+    }
+  }
+  
+  @mixin padding($padding: null, $paddingTop: null, $paddingRight: null, $paddingBottom: null, $paddingLeft: null) {
+    @if $padding==null {
+      @if $paddingTop {
+        padding-top: $paddingTop;
+      }
+  
+      @if $paddingRight {
+        padding-right: $paddingRight;
+      }
+  
+      @if $paddingBottom {
+        padding-bottom: $paddingBottom;
+      }
+  
+      @if $paddingLeft {
+        padding-left: $paddingLeft;
+      }
+    }
+  
+    @else {
+      padding: $padding;
+    }
+  }
+  
+  @mixin margin($margin: null, $marginTop: null, $marginRight: null, $marginBottom: null, $marginLeft: null) {
+    @if $margin==null {
+      @if $marginTop {
+        margin-top: $marginTop;
+      }
+  
+      @if $marginRight {
+        margin-right: $marginRight;
+      }
+  
+      @if $marginBottom {
+        margin-bottom: $marginBottom;
+      }
+  
+      @if $marginLeft {
+        margin-left: $marginLeft;
+      }
+    }
+  
+    @else {
+      margin: $margin;
+    }
+  }
+  
+  @mixin backgroundImage($imgpath:null, $position:null, $repeat: no-repeat, $size:null) {
+    @if $imgpath==null {
+      background: {
+        position: $position;
+        repeat: $repeat;
+        size: $size
+      }
+    }
+  
+    @else {
+      background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+        size: $size
+      }
+    }
+  }

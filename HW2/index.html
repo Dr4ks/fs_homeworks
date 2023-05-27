@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2</title>
+    <link rel="stylesheet" href="dist/styles/styles.min.css">
+</head>
+<body>
+    <div class="top-menu">
+        <button class="menu-button">
+            <div class="line3"></div>
+            <div class="line2"></div>
+            <div class="line1"></div>
+            <div class="layer1"></div>
+        </button>
+        <ul class="dropdown">
+            <li>Home</li>
+            <li>About US</li>
+            <li>Our journal</li>
+            <li>Projects</li>
+            <li>News</li>
+            <li>Features</li>
+        </ul>
+    </div>
+    <header class="header">
+        <img src="src/img/intro-img 1.png" class="intro-img" alt="intro-img">
+    </header>
+    <div class="recent-posts">
+        <h2 class="recent-post-header">- OUR RECENT POSTS</h2>
+        <div class="post1">
+            <img src="src/img/post-img 1.png" class="post-image1" alt="post-image-1">
+            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
+            <h6>Photography, Journal   /   9 Comments</h6>
+        </div>
+        <div class="post2"></div>
+            <img src="src/img/post1img 1.png" class="post-image2" alt="">
+            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
+            <h6>Photography, Journal   /   9 Comments</h6>
+        <div class="post3">
+            <img src="src/img/post2img 1.png" class="post-image3">
+            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
+            <h6>Photography, Journal   /   9 Comments</h6>
+        </div>
+    </div>
+    <div class="instagram">
+        <h2>- Last Instagram Shot</h2>
+        <img src="src/img/post-1 1.png" class="instagrampost">
+        <div class="bg"></div>
+    </div>
+    <footer class="footer">
+        <h2>- get in touch with us -</h2>
+        <p>Maecenas faucibus molli interdum. Cras mattis consectetur purus sitor amet sed donec malesuada ullamcorper odio.</p>
+
+        <div class="social-icon">
+            <div class="RSS">
+                <img src="src/img/rss-icon.png" class="rss-icon" alt="">
+                <div class="rss-round"></div>
+            </div>
+            <div class="Facebook">
+                <img src="src/img/facebook-icon.png" class="facebook-icon">
+                <div class="facebook-round"></div>
+            </div>
+            <div class="Twitter">
+                <img src="src/img/twitter-icon.png" class="twitter-icon">
+                <div class="twitter-round"></div>
+            </div>
+            <div class="Dribbble">
+                <img src="src/img/dribbble-icon.png" class="dribbble-icon">
+                <div class="dribbble-round"></div>
+            </div>
+            <div class="Pinterest">
+                <img src="src/img/pinterest-icon.png" class="pinterest-icon">
+                <div class="pinterest-round"></div>
+            </div>
+            <div class="communication"> Moonshine St. 14-05 Light City   /   T. +00 (123) 456 78 90   /   first.last@email.com</div>
+            <div class="footer-bg"></div>
+        </div>
+    </footer>
+    <script>
+    const burger = document.querySelector('.top-menu')
+        burger.addEventListener('click', function () {
+            const menuIcon = document.querySelector('#menu-button')
+            menuIcon.classList.toggle('fa-times')
+
+            const dropMenu = document.querySelector('.dropdown')
+            dropMenu.classList.toggle('active')
+        })
+</script>
+</body>
+</html>
