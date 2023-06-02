@@ -1,12 +1,14 @@
 {
   "name": "hw2",
   "version": "1.0.0",
-  "description": "",
+  "repository": "https://github.com/Dr4ks/fs_homeworks.git",
+  "description": "Sahib Humbatzada (Full Stack Advanced)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
-  "author": "",
+  "author": "Sahib Humbatzada",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.29.3",
