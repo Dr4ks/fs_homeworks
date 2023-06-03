@@ -13,10 +13,13 @@ First of all, let's write all requirements and their answers for using Gulp.
 gulp.task("compileSCSS",function(){
     return gulp.src("src/scss/*.scss")
     .pipe(sass().on('error',sass.logError)) //minifying and compiling
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions', 'Firefox >= 60', 'Chrome >= 62', 'Safari >= 11', 'iOS >= 11', 'Edge >= 16'],
+        cascade: false
+    }))   
+    .pipe(cleancss({compatibility:'ie8'}))
     .pipe(concat("styles.min.css")) //concating
-    .pipe(autoprefixer())
     .pipe(gulp.dest('dist/styles'))
-    .pipe(browserSync.stream());
 });
 
 gulp.task("compileJS",function(){
@@ -24,15 +27,19 @@ gulp.task("compileJS",function(){
     .pipe(uglify())  //minifying
     .pipe(concat("scripts.min.js")) //concating
     .pipe(gulp.dest('dist/scripts'))
-    .pipe(browserSync.stream())
 });
 
-//dev task is combined tasks of compileing JS and SCSS into CSS
+
+//this is dev task
 gulp.task("dev",function(){
-    gulp.watch("/src/scss/*.scss",gulp.series("compileSCSS"));
-    gulp.watch("/src/js/*.js",gulp.series("compileJS"));
-    gulp.watch("index.html").on('change',browserSync.reload);
+    browserSync.init({
+        server:{baseDir:'./'},index:'index.html'
+    })
+    gulp.watch("/src/scss/*.scss",gulp.series("compileSCSS")).on('change',browserSync.reload);
+    gulp.watch("/src/js/*.js",gulp.series("compileJS")).on('change',browserSync.reload);
+    gulp.watch('src/img/*', gulp.series(['optimg'])).on('change', browserSync.reload);
 })
+
 ```
 
 
@@ -47,10 +54,8 @@ gulp.task("dev",function(){
 
 
 ```javascript
-//cleaning dist folder
 gulp.task('clean', function () {
-    return gulp.src('dist/**/*', { read: false, allowEmpty: true })
-      .pipe(rimraf());
+    return gulp.src('dist/*', { read: false }).pipe(clean())
 });
 
 
@@ -67,53 +72,15 @@ gulp.task('rmuncss',function(){
 //optimize image
 gulp.task('optimg', function () {
     return gulp.src('src/img/**/*')
-      .pipe(webp())
-      .pipe(gulp.dest('dist/img'))
-      .pipe(browserSync.stream());
+      .pipe(imagemin())
+      .pipe(gulp.dest('dist/images'))
   });
 
 
 //this is build task
 
-gulp.task('build',gulp.series('compileSCSS','compileJS','clean','rmuncss','optimg'))
+gulp.task('build',gulp.series(['compileSCSS','compileJS','clean','rmuncss','optimg']))
 
-```
-
-
-3)Another requirement is to design CSS by using preprocessors including SCSS or SASS, I used SCSS due to my comfort.
-You can look at all mixins which I code for this project in _mixin.scss
-
-Let's look at the some examples of them.
-
-```scss
-  //Main Part is here
-@mixin pwhl($position,$width,$height,$left){   
-    position: $position;
-    width: $width;
-    height: $height;
-    left: $left;
-}
-@mixin bstbbbrd($box-sizing,$top,$background,$border,$border-radius){
-    box-sizing: $box-sizing;
-    top: $top;
-    background: $background;
-    border: $border;
-    border-radius:$border-radius;
-}
-@mixin tp($top,$background){
-    top:$top;
-    background:$background;
-}
-
-@mixin setsforfont($top,$font-family,$font-style,$font-weight,$font-size,$line-height,$color){
-  top: $top;
-  font-family: $font-family;
-  font-style: $font-style;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $color;
-}
 ```
 
 
@@ -122,18 +89,28 @@ Reminder! Also the same thing I did for variables, typography,variables and colo
 
 4)Also I want to show you that main thing for HTML that I use JS code for burger menu. You can look at the code also on HTML, now I can provide you.
 
+```javascript
+const menu=document.getElementById('menu');
+const navmenu=document.getElementById('menu-nav');
+
+menu.addEventListener('click',function(){
+    menu.classList.toggle('menu-active');
+    navmenu.classList.toggle('active-menu-nav');
+});
+```
 
 ```javascript
-    <script>
-    const burger = document.querySelector('.top-menu')
-        burger.addEventListener('click', function () {
-            const menuIcon = document.querySelector('#menu-button')
-            menuIcon.classList.toggle('fa-times')
+const instahead=document.getElementById('insta-head');
 
-            const dropMenu = document.querySelector('.dropdown')
-            dropMenu.classList.toggle('active')
-        })
-</script>
+window.addEventListener('resize',function(){
+    if(window.innerWidth>=768){
+        instahead.innerHTML='- Latest Instagram Shots';
+    }
+    else if(window.innerWidth<768){
+        instahead.innerHTML='- Last Instagram Shots';
+    }
+});
+
 ```
 
 
@@ -148,7 +125,7 @@ $breakpoints: (
   // 768px
   lg: 64rem,
   // 1024px
-  xl: 75rem,   //thi  s is for third one
+  xl: 75rem,   //this is for third one
   // 1280px
 );
 ```

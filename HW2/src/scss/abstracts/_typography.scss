@@ -1,16 +1,26 @@
-.menu-item-text {
-    font-family: "Asap-Regular";
-    font-size: $fs-xs;
+.nav-link{
+  color: $mainText;
+  letter-spacing: 1.1px;
+  line-height: $fw-normal;
+  font-size: $fs-sm;
+  font-weight: $fw-normal;
+  text-transform: uppercase;
+
+  &-active{
+    color: $activeLink;
   }
-  
-  .btn-text {
-    font-family: "NoirPro-Regular";
+  &:hover{
+    color: $activeLink;
+  }
+}
+
+.main-heading{
+  color: $mainText;
+  font-weight: $fw-bold;
+  font-size: $fs-lg;
+  line-height: $fw-normal;
+  text-transform: uppercase;
+  @include tablet{
     font-size: $fs-sm;
   }
-  
-  .heading-text {
-    font-family: "NoirPro-Regular";
-    font-size: $fs-lg;
-    font-weight: $fw-bold;
-  }
-  
+}

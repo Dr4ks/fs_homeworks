@@ -8,6 +8,21 @@ $fs-xs: 1.0625rem; // 17px
 $fw-normal: 400;
 $fw-bold: 600;
 
+
+$fs_11: 0.6875rem; 
+$fs_12: 0.75rem;
+$fs_13: 0.8125rem;
+$fs_14: 0.875rem;
+$fs_16: 1rem;
+
+
+$lh-20: 1.25rem;
+$lh-22: 1.375rem;
+$lh-24: 1.5rem;
+$lh-26: 1.625rem;
+$lh-30: 1.875rem;
+
+
 /* Breakpoints */
 $breakpoints: (
   sm: 20rem,   //this is for first one
@@ -16,6 +31,8 @@ $breakpoints: (
   // 768px
   lg: 64rem,
   // 1024px
-  xl: 75rem,   //thi  s is for third one
-  // 1280px
+  xl: 75rem,   //this is for third one
+  // 1200px
 );
+
+

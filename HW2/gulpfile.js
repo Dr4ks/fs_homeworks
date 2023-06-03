@@ -1,21 +1,24 @@
-const browserSync = require("browser-sync");
-const gulp=require("gulp")
-const sass=require('gulp-sass')(require('sass'));
-const rimraf=require('gulp-rimraf');
-const concat=require('gulp-concat')
-const autoprefixer=require('gulp-autoprefixer');
-const changed=require('gulp-changed');
+const gulp = require('gulp')
+const concat = require('gulp-concat')
+const clean = require('gulp-clean')
+const browserSync = require('browser-sync').create();
 const uglify=require('gulp-uglify');
-const uncss=require('gulp-uncss')
-const webp=require('gulp-webp')
+const sass=require('gulp-sass')(require('sass'))
+const cleancss=require('gulp-clean-css');
+const autoprefixer=require('gulp-autoprefixer');
+const imagemin=require('gulp-imagemin');
+
 
 gulp.task("compileSCSS",function(){
     return gulp.src("src/scss/*.scss")
     .pipe(sass().on('error',sass.logError)) //minifying and compiling
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions', 'Firefox >= 60', 'Chrome >= 62', 'Safari >= 11', 'iOS >= 11', 'Edge >= 16'],
+        cascade: false
+    }))   
+    .pipe(cleancss({compatibility:'ie8'}))
     .pipe(concat("styles.min.css")) //concating
-    .pipe(autoprefixer())
     .pipe(gulp.dest('dist/styles'))
-    .pipe(browserSync.stream());
 });
 
 gulp.task("compileJS",function(){
@@ -23,21 +26,22 @@ gulp.task("compileJS",function(){
     .pipe(uglify())  //minifying
     .pipe(concat("scripts.min.js")) //concating
     .pipe(gulp.dest('dist/scripts'))
-    .pipe(browserSync.stream())
 });
 
 
 //this is dev task
 gulp.task("dev",function(){
-    gulp.watch("/src/scss/*.scss",gulp.series("compileSCSS"));
-    gulp.watch("/src/js/*.js",gulp.series("compileJS"));
-    gulp.watch("index.html").on('change',browserSync.reload);
+    browserSync.init({
+        server:{baseDir:'./'},index:'index.html'
+    })
+    gulp.watch("/src/scss/*.scss",gulp.series("compileSCSS")).on('change',browserSync.reload);
+    gulp.watch("/src/js/*.js",gulp.series("compileJS")).on('change',browserSync.reload);
+    gulp.watch('src/img/*', gulp.series(['optimg'])).on('change', browserSync.reload);
 })
 
 //cleaning dist folder
 gulp.task('clean', function () {
-    return gulp.src('dist/**/*', { read: false, allowEmpty: true })
-      .pipe(rimraf());
+    return gulp.src('dist/*', { read: false }).pipe(clean())
 });
 
 
@@ -54,15 +58,14 @@ gulp.task('rmuncss',function(){
 //optimize image
 gulp.task('optimg', function () {
     return gulp.src('src/img/**/*')
-      .pipe(webp())
-      .pipe(gulp.dest('dist/img'))
-      .pipe(browserSync.stream());
+      .pipe(imagemin())
+      .pipe(gulp.dest('dist/images'))
   });
 
 
 //this is build task
 
-gulp.task('build',gulp.series('compileSCSS','compileJS','clean','rmuncss','optimg'))
+gulp.task('build',gulp.series(['compileSCSS','compileJS','clean','rmuncss','optimg']))
 
 
 

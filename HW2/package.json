@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/Dr4ks/fs_homeworks.git",
   "description": "Sahib Humbatzada (Full Stack Advanced)",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build"

@@ -21,36 +21,6 @@
       @content;
     }
   }
-
-  //Main Part is here
-@mixin pwhl($position,$width,$height,$left){   
-    position: $position;
-    width: $width;
-    height: $height;
-    left: $left;
-}
-@mixin bstbbbrd($box-sizing,$top,$background,$border,$border-radius){
-    box-sizing: $box-sizing;
-    top: $top;
-    background: $background;
-    border: $border;
-    border-radius:$border-radius;
-}
-@mixin tp($top,$background){
-    top:$top;
-    background:$background;
-}
-
-@mixin setsforfont($top,$font-family,$font-style,$font-weight,$font-size,$line-height,$color){
-  top: $top;
-  font-family: $font-family;
-  font-style: $font-style;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $color;
-}
-//Main Part is here
   
   @mixin flexbox($display: flex,
     $direction: row,

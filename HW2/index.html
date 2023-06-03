@@ -8,85 +8,166 @@
     <link rel="stylesheet" href="dist/styles/styles.min.css">
 </head>
 <body>
-    <div class="top-menu">
-        <button class="menu-button">
-            <div class="line3"></div>
-            <div class="line2"></div>
-            <div class="line1"></div>
-            <div class="layer1"></div>
-        </button>
-        <ul class="dropdown">
-            <li>Home</li>
-            <li>About US</li>
-            <li>Our journal</li>
-            <li>Projects</li>
-            <li>News</li>
-            <li>Features</li>
-        </ul>
-    </div>
     <header class="header">
-        <img src="src/img/intro-img 1.png" class="intro-img" alt="intro-img">
-    </header>
-    <div class="recent-posts">
-        <h2 class="recent-post-header">- OUR RECENT POSTS</h2>
-        <div class="post1">
-            <img src="src/img/post-img 1.png" class="post-image1" alt="post-image-1">
-            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
-            <h6>Photography, Journal   /   9 Comments</h6>
+        <div class="menu" id="menu">
+          <span class="menu-line"></span>
+          <ul class="menu-nav " id="menu-nav">
+            <li class="link home-link">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#about">About us</a></li>
+            <li class="link">
+              <a class="nav-link" href="#jurnal">Our Jurnal</a>
+            </li>
+            <li class="link">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#news">News</a></li>
+            <li class="link">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
         </div>
-        <div class="post2"></div>
-            <img src="src/img/post1img 1.png" class="post-image2" alt="">
-            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
-            <h6>Photography, Journal   /   9 Comments</h6>
-        <div class="post3">
-            <img src="src/img/post2img 1.png" class="post-image3">
-            <h4>Aenean Adipiscing Etiam Vestibulum</h4>
-            <h6>Photography, Journal   /   9 Comments</h6>
+  
+        <nav class="nav">
+          <ul>
+            <li class="link home-link">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#about">About us</a></li>
+            <li class="link">
+              <a class="nav-link" href="#jurnal">Our Jurnal</a>
+            </li>
+            <li class="link">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#news">News</a></li>
+            <li class="link">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="link"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <img
+          src="src/img/intro-img 1.png"
+          alt="Header Image"
+          class="header-image"
+        />
+      </header>
+      <main class="container">
+        <h1 class="posts-heading main-heading">- our Recent posts</h1>
+  
+        <section class="posts-container">
+          <div class="post">
+            <img src="src/img/post-img 1.png" alt="post-image" class="post-img" />
+            <div class="post__detail">
+              <h4 class="post__title">Aenean Adipiscing Etiam Vestibulum</h4>
+              <p class="post__comment">Photography, Journal / 9 Comments</p>
+              <p class="post__description">
+                Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque
+                ornare sem lacinia quam venenatis vestibulum.
+              </p>
+            </div>
+          </div>
+          <div class="post">
+            <img src="src/img/post1img 1.png" alt="post-image" class="post-img" />
+            <div class="post__detail">
+              <h4 class="post__title">Aenean Adipiscing Etiam Vestibulum</h4>
+              <p class="post__comment">Photography, Journal / 9 Comments</p>
+              <p class="post__description">
+                Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque
+                ornare sem lacinia quam venenatis vestibulum.
+              </p>
+            </div>
+          </div>
+          <div class="post">
+            <img src="src/img/post2img 1.png" alt="post-image" class="post-img" />
+            <div class="post__detail">
+              <h4 class="post__title">Aenean Adipiscing Etiam Vestibulum</h4>
+              <p class="post__comment">Photography, Journal / 9 Comments</p>
+              <p class="post__description">
+                Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque
+                ornare sem lacinia quam venenatis vestibulum.
+              </p>
+            </div>
+          </div>
+          <div class="post">
+            <img src="src/img/post-1 1.png" alt="post-image" class="post-img" />
+            <div class="post__detail">
+              <h4 class="post__title">Aenean Adipiscing Etiam Vestibulum</h4>
+              <p class="post__comment">Photography, Journal / 9 Comments</p>
+              <p class="post__description">
+                Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque
+                ornare sem lacinia quam venenatis vestibulum.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <section class="shots">
+        <div class="navigation-container">
+          <h3 class="insta-shot main-heading" id="insta-head">
+            - Last Instagram Shot
+          </h3>
+          <a href="#instapage" class="insta-page">go to our instagram page -</a>
         </div>
-    </div>
-    <div class="instagram">
-        <h2>- Last Instagram Shot</h2>
-        <img src="src/img/post-1 1.png" class="instagrampost">
-        <div class="bg"></div>
-    </div>
-    <footer class="footer">
-        <h2>- get in touch with us -</h2>
-        <p>Maecenas faucibus molli interdum. Cras mattis consectetur purus sitor amet sed donec malesuada ullamcorper odio.</p>
-
-        <div class="social-icon">
-            <div class="RSS">
-                <img src="src/img/rss-icon.png" class="rss-icon" alt="">
-                <div class="rss-round"></div>
-            </div>
-            <div class="Facebook">
-                <img src="src/img/facebook-icon.png" class="facebook-icon">
-                <div class="facebook-round"></div>
-            </div>
-            <div class="Twitter">
-                <img src="src/img/twitter-icon.png" class="twitter-icon">
-                <div class="twitter-round"></div>
-            </div>
-            <div class="Dribbble">
-                <img src="src/img/dribbble-icon.png" class="dribbble-icon">
-                <div class="dribbble-round"></div>
-            </div>
-            <div class="Pinterest">
-                <img src="src/img/pinterest-icon.png" class="pinterest-icon">
-                <div class="pinterest-round"></div>
-            </div>
-            <div class="communication"> Moonshine St. 14-05 Light City   /   T. +00 (123) 456 78 90   /   first.last@email.com</div>
-            <div class="footer-bg"></div>
+        <div class="images-container">
+          <img
+            src="src/img/post-img 1.png"
+            alt="Insta shot 1"
+            class="insta-shot-img"
+          />
+          <img
+            src="src/img/post-1 1.png"
+            alt="Insta shot 2"
+            class="insta-shot-img hidden"
+          />
+          <img
+            src="src/img/post1img 1.png"
+            alt="Insta shot 3"
+            class="insta-shot-img hidden"
+          />
+  
+          <img
+            src="src/img/post2img 1.png"
+            alt="Insta shot 4"
+            class="insta-shot-img hidden-4"
+          />
         </div>
-    </footer>
-    <script>
-    const burger = document.querySelector('.top-menu')
-        burger.addEventListener('click', function () {
-            const menuIcon = document.querySelector('#menu-button')
-            menuIcon.classList.toggle('fa-times')
-
-            const dropMenu = document.querySelector('.dropdown')
-            dropMenu.classList.toggle('active')
-        })
-</script>
-</body>
+      </section>
+  
+      <footer class="footer">
+        <h2 class="footer-title main-heading">- get in touch with us -</h2>
+        <p class="footer-text">
+          Maecenas faucibus molli interdum. Cras mattis consectetur purus sitor
+          amet sed donec malesuada ullamcorper odio.
+        </p>
+  
+        <div class="social-media">
+          <span class="rss-icon">
+            <img src="src/img/rss-icon.png" alt="rss-icon" />
+          </span>
+          <span class="facebook-icon">
+            <img src="src/img/facebook-icon.png" alt="facebook-icon" />
+          </span>
+          <span class="twitter-icon">
+            <img src="src/img/twitter-icon.png" alt="twitter-icon" />
+          </span>
+          <span class="dribble-icon">
+            <img src="src/img/dribbble-icon.png" alt="dribble-icon" />
+          </span>
+          <span class="pinterest-icon">
+            <img src="src/img/pinterest-icon.png" alt="pinterest-icon" />
+          </span>
+        </div>
+        <div class="address">
+          Moonshine St. 14-05 Light City / T. +00 (123) 456 78 90 /
+          first.last@email.com
+        </div>
+      </footer>
+  
+      <script src="src/js/instahead.js"></script>
+      <script src="src/js/menu.js"></script>
+    </body>
 </html>
