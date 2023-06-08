@@ -1,0 +1,12 @@
+{
+  "name": "hw3",
+  "version": "1.0.0",
+  "repository": "https://github.com/Dr4ks/fs_homeworks.git",
+  "description": "Sahib Humbatzada (Full Stack Advanced)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sahib Humbatzada",
+  "license": "ISC"
+}
