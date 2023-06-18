@@ -1,0 +1,18 @@
+{
+  "name": "hw3v2",
+  "version": "1.0.0",
+  "repository": "https://github.com/Dr4ks/fs_homeworks.git",
+  "description": "Sahib Humbatzada (Full Stack Advanced)",
+  "scripts": {
+    "task1":"node scripts/task1.js",
+    "task2":"node scripts/task2.js",
+    "task3":"node scripts/task3.js",
+    "task4":"node scripts/task4.js",
+    "task5":"node scripts/task5.js",
+    "task6":"node scripts/task6.js",
+    "task7":"node scripts/task7.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sahib Humbatzada",
+  "license": "ISC"
+}
