@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>News Feed</h1>
+      <button id="addpost">Add Post</button>  
+    </header>
+
+    <div id="load">
+      <div class="loader"></div>
+    </div>
+
+    <div id="container"></div>
+
+    <div id="modal" class="modal">
+      <div class="modal-ctn">
+        <span class="cls">&times;</span>
+        <h2>Create Post</h2>
+        <input type="text" id="postitle" placeholder="Title" required />
+        <textarea id="postxt" placeholder="text" required></textarea>
+        <button id="crtpost">Create</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
