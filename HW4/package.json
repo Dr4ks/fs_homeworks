@@ -1,0 +1,19 @@
+{
+  "name": "hw4",
+  "version": "1.0.0",
+  "repository": "https://github.com/Dr4ks/fs_homeworks.git",
+  "description": "Sahib Humbatzada (Full Stack Advanced)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sahib Humbatzada",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^3.3.1",
+    "xhr2": "^0.2.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
